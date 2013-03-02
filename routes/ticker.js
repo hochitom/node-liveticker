@@ -57,6 +57,11 @@ module.exports = function(app) {
                 console.log('error');
             } else {
                 console.log('success');
+
+                app.io.sockets.on('connection', function (socket) {
+                        socket.broadcast.emit('newMessage', event);
+                });
+
                 res.redirect('/admin/tickers/' + tickerId + '/detail');
             }
         });
@@ -79,6 +84,29 @@ module.exports = function(app) {
 
     app.get('/admin/tickers/:tickerId/detail', function(req, res) {
         var ticker = res.locals.ticker;
+
+        app.io.sockets.on('connection', function (socket) {
+            console.log("Connection " + socket.id + " accepted.");
+
+            socket.on('message', function(message){
+                console.log("Received message: " + message + " - from client " + socket.id);
+
+                var event = new Event({
+                    text: message
+                });
+
+                console.log(event);
+
+                event.save(function (err) {
+                    console.log('test');
+                    if (err) console.log('new entry failed');
+                    
+                    console.log('entry saved!');
+                    socket.broadcast.emit('publish', message);
+                });
+            });
+        });
+
         Event.find({ticker: ticker._id}, function(err, events) {
             res.render('admin/detail', { 
                 event: new Event(),

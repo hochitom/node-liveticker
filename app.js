@@ -25,7 +25,7 @@ app.configure(function(){
 
     app.use(app.router);
 
-    app.use(express.static(path.join(__dirname, 'public')));
+    app.use(express.static(path.join(__dirname, 'public'))); 
 });
 
 app.configure('development', function(){
@@ -44,3 +44,5 @@ require('./routes')(app);
 http.createServer(app).listen(config.port, config.address, function() {
     console.log("Express server listening on %s:%d in %s mode", config.address, config.port, app.settings.env);
 });
+
+app.io = require('socket.io').listen(3001);

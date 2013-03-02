@@ -11,14 +11,17 @@ html
     block scripts
       script(src='/vendor/jquery/js/jquery.min.js')
       script(src='/vendor/bootstrap/js/bootstrap.min.js')
+      script(src="http://localhost:3001/socket.io/socket.io.js")
+      script(src="/vendor/main.js")
+      
   body
     .navbar.navbar-inverse.navbar-fixed-top
       .navbar-inner
         .container
-          a.brand(href="/") Sturm12.at - Liveticker
+          a.brand(href="/") Liveticker
           ul.nav
             li
-              a(href="http://sturm12.at") Sturm12.at
+              a(href="/admin/tickers") Admin
 
     .container
       block content
