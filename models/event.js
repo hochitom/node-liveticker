@@ -3,8 +3,9 @@ var mongoose = require('mongoose'),
 
 var Event = new Schema({
     ticker: { type: String},
-    text: { type: String },
-    date: { type: Date, default: Date.now }
+    text: { type: String, required: true },
+    date: { type: Date, default: Date.now },
+    type: { type: String }
 });
 
 module.exports = mongoose.model('Events', Event);

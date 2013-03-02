@@ -24,11 +24,14 @@ module.exports = function(app) {
 
     app.get('/ticker/:tickerId', function(req, res) {
         var ticker = res.locals.ticker;
-        Event.find({ticker: ticker._id}, function(err, events) {
-            res.render('ticker/detail', { 
-                event: new Event(),
-                events: events
+        Event
+            .find({ticker: ticker._id})
+            .sort('-date')
+            .exec(function(err, events) {
+                res.render('ticker/detail', { 
+                    event: new Event(),
+                    events: events
+                });
             });
-        });
     });
 }

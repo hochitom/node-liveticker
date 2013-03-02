@@ -31,6 +31,14 @@ block content
       legend Create a new Message
     
       .control-group
+        mixin label("type", "Type")        
+        .controls
+          select(name="type", id="type")
+            option(value="goal") Tor
+            option(value="change") Spielerwechsel
+          mixin errorMessage('type', 'type')      
+
+      .control-group
         mixin label("message", "Message")        
         .controls
           mixin textarea("message", event.message)
