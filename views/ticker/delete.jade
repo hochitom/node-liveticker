@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  h2.display-data Delete Ticker?
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Name
+          td= display(ticker.name)
+        tr
+          td Date
+          td= display(ticker.date)
+        tr
+          td Description
+          td= display(ticker.description)
+
+
+  form#ticker-form.form-horizontal(action="/tickers/" + ticker._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/tickers") Back
+      | 
+      input.btn.btn-danger(type="submit", value="Delete")

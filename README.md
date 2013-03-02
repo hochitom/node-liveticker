@@ -1,2 +1,1 @@
-node-liveticker
-===============
+# Description of your app

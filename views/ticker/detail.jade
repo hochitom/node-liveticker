@@ -1,0 +1,52 @@
+extends ../layout
+include ../mixins/form-helpers
+
+block content
+  h2.display-data Ticker Detail
+            
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Name
+          td= display(ticker.name)
+        tr
+          td Date
+          td= display(ticker.date)
+        tr
+          td Description
+          td= display(ticker.description)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/tickers") Back
+    | 
+    a.btn.btn-primary(href="/tickers/" + ticker._id + "/edit") Edit
+    | 
+    a.btn.btn-danger(href="/tickers/" + ticker._id + "/delete") Delete
+
+  form#ticker-form.form-horizontal(method="POST")
+    fieldset
+      legend Create a new Message
+    
+      .control-group
+        mixin label("message", "Message")        
+        .controls
+          mixin textarea("message", event.message)
+          mixin errorMessage('event', 'message')
+
+    .form-actions
+      input.btn.btn-primary(type="submit", value="Save")
+
+  h2.display-data Ticker Messages
+
+  table.table.table-bordered
+    tr
+      th Date
+      th Text
+
+    each event in events
+        tr
+          td= display(event.date)
+          td= display(event.text)

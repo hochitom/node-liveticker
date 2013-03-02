@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  h2.display-data All Tickers
+    a.btn.btn-primary.pull-right(href="/tickers/create") Create a new Ticker
+
+  table.table.table-bordered.table-striped(style="width:100%")
+    tr
+        th Name
+        th Date
+        th Description
+        th.last
+
+    each ticker in tickers
+      tr
+        td= display(ticker.name)
+        td= display(ticker.date)
+        td= display(ticker.description)
+
+        td
+          a(href="/tickers/" + ticker._id + "/detail", title="Detail")
+            i.icon-zoom-in
+          | 
+          a(href="/tickers/" + ticker._id + "/edit", title="Edit")
+            i.icon-edit
+          | 
+          a(href="/tickers/" + ticker._id + "/delete", title="Delete")
+            i.icon-remove

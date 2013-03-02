@@ -1,0 +1,28 @@
+extends ../layout
+include ../mixins/form-helpers
+
+block content
+  form#ticker-form.form-horizontal(action="/tickers/" + ticker._id + "/edit", method="POST")
+    fieldset
+      legend Edit Ticker
+
+      .control-group
+        mixin label("name", "Name")        
+        .controls
+          mixin text("name", ticker.name)
+          mixin errorMessage('ticker', 'name')
+      .control-group
+        mixin label("date", "Date")        
+        .controls
+          mixin date("date", ticker.date)
+          mixin errorMessage('ticker', 'date')
+      .control-group
+        mixin label("description", "Description")        
+        .controls
+          mixin text("description", ticker.description)
+          mixin errorMessage('ticker', 'description')
+
+    .form-actions
+      a.btn.btn-warning(href="/tickers") Back
+      | 
+      input.btn.btn-primary(type="submit", value="Save")
