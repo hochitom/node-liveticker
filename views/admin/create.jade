@@ -1,0 +1,80 @@
+extends ../layout
+include ../mixins/form-helpers
+
+block content
+
+  form#ticker-form.form-horizontal(action="/tickers/create", method="POST")
+    fieldset
+      legend Create a new Live-Ticker
+    
+      .control-group
+        mixin label("type", "Type")        
+        .controls
+          select(id='type', name='type')
+            option Match
+            option Chat
+            option Sonstiges
+          mixin errorMessage('type', 'type')
+      .control-group
+        mixin label("name", "Name")        
+        .controls
+          mixin text("name", ticker.name)
+          mixin errorMessage('ticker', 'name')
+      .control-group
+        mixin label("date", "Date")        
+        .controls
+          mixin datetime("date", ticker.date)
+          mixin errorMessage('ticker', 'date')
+      .control-group
+        mixin label("description", "Description")        
+        .controls
+          mixin textarea("description", ticker.description)
+          mixin errorMessage('ticker', 'description')
+
+      .match-data
+        h2.display-data Match
+        .control-group
+          mixin label("team1", "Heimmannschaft")        
+          .controls
+            mixin text("team1", ticker.team1)
+            mixin errorMessage('team1', 'team1')
+        .control-group
+          mixin label("team2", "Gastmannschaft")        
+          .controls
+            mixin text("team2", ticker.team2)
+            mixin errorMessage('team2', 'team2')
+        .control-group
+          mixin label("place", "Ort")        
+          .controls
+            mixin text("place", ticker.place)
+            mixin errorMessage('place', 'place')
+        .control-group
+          mixin label("Visitors", "Zuschauer")        
+          .controls
+            mixin number("Visitors", ticker.visitors)
+            mixin errorMessage('Visitors', 'Visitors')
+        .control-group
+          mixin label("official1", "Schiedsrichter")        
+          .controls
+            mixin text("official1", ticker.officials.first)
+            mixin errorMessage('official1', 'official1')
+        .control-group
+          mixin label("official2", "1. Assistent")        
+          .controls
+            mixin text("official2", ticker.officials.second)
+            mixin errorMessage('official2', 'official2')
+        .control-group
+          mixin label("official3", "2. Assistent")        
+          .controls
+            mixin text("official3", ticker.officials.third)
+            mixin errorMessage('official3', 'official3')
+        .control-group
+          mixin label("official4", "3. Assistent")        
+          .controls
+            mixin text("official4", ticker.officials.fourth)
+            mixin errorMessage('official4', 'official4')
+
+    .form-actions
+      a.btn.btn-warning(href="/tickers") Back
+      | 
+      input.btn.btn-primary(type="submit", value="Create")

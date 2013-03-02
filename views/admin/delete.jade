@@ -1,8 +1,7 @@
 extends ../layout
-include ../mixins/form-helpers
 
 block content
-  h2.display-data= display(ticker.name)
+  h2.display-data Delete Ticker?
             
   table.table.table-bordered
     tr
@@ -18,12 +17,9 @@ block content
           td Description
           td= display(ticker.description)
 
-  table.table.table-bordered
-    tr
-      th Date
-      th Text
 
-    each event in events
-        tr
-          td= display(event.date)
-          td= display(event.text)
+  form#ticker-form.form-horizontal(action="/tickers/" + ticker._id + "/delete", method="POST")
+    .form-actions
+      a.btn.btn-warning(href="/tickers") Back
+      | 
+      input.btn.btn-danger(type="submit", value="Delete")
