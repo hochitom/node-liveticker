@@ -49,7 +49,8 @@ module.exports = function(app) {
         var tickerId = ticker._id;
         var event = new Event({
             ticker: tickerId,
-            text: req.body.message
+            text: req.body.message,
+            type: req.body.type
         });
 
         event.save(function(err){
@@ -59,7 +60,7 @@ module.exports = function(app) {
                 console.log('success');
 
                 app.io.sockets.on('connection', function (socket) {
-                        socket.broadcast.emit('newMessage', event);
+                    socket.broadcast.emit('newMessage', event);
                 });
 
                 res.redirect('/admin/tickers/' + tickerId + '/detail');
