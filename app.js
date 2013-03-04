@@ -21,7 +21,7 @@ app.configure(function(){
     app.use(express.methodOverride());
 
 	app.use(express.cookieParser('your secret here'));
-    app.use(express.session());
+    app.use(express.cookieSession());
 
     app.use(app.router);
 
