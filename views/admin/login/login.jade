@@ -1,0 +1,27 @@
+extends ../layout
+include ../mixins/form-helpers
+
+block content
+
+  form#ticker-form.form-horizontal(method="POST")
+    fieldset
+      legend Login
+    
+      .control-group
+        mixin label("name", "Name")        
+        .controls
+          mixin text("user")
+          mixin errorMessage('user', 'user')
+      .control-group
+        mixin label("password", "Passwort")        
+        .controls
+          mixin password("password")
+          mixin errorMessage('password', 'password')
+      .control-group
+        mixin label("remember", "remember me")        
+        .controls
+          mixin boolean("remember")
+          mixin errorMessage('remember', 'remember')
+
+    .form-actions
+      input.btn.btn-primary(type="submit", value="Login")

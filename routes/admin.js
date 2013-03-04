@@ -26,7 +26,7 @@ module.exports = function(app) {
     });
 
     app.get('/admin/login', function(req,res) {
-        res.render('admin/login');
+        res.render('admin/login/login');
     });
 
     app.post('/admin/login', function(req, res) {
@@ -51,12 +51,12 @@ module.exports = function(app) {
     
     app.get('/admin/tickers', function(req, res) {
         Ticker.find({}, function(err, tickers) {
-            res.render('admin/index', { tickers : tickers });
+            res.render('admin/tickers/index', { tickers : tickers });
         });
     });
 
     app.get('/admin/tickers/create', function(req, res) {
-        res.render('admin/create', { ticker : new Ticker() });
+        res.render('admin/tickers/create', { ticker : new Ticker() });
     });
 
     app.post('/admin/tickers/create', function(req, res) { 
@@ -64,7 +64,7 @@ module.exports = function(app) {
 
         ticker.save(function(err) {
             if (err) {
-                res.render('admin/create', {
+                res.render('admin/tickers/create', {
                     ticker : ticker
                 });
             } else {
@@ -74,7 +74,7 @@ module.exports = function(app) {
     });
 
     app.get('/admin/tickers/:tickerId/edit', function(req, res) {
-        res.render('admin/edit');
+        res.render('admin/tickers/edit');
     });
 
     app.post('/admin/tickers/:tickerId/detail', function(req, res) {
@@ -107,7 +107,7 @@ module.exports = function(app) {
 
         ticker.save(function(err) {
             if (err) {
-                res.render('admin/edit', {
+                res.render('admin/tickers/edit', {
                     ticker : ticker
                 });
             } else {
@@ -150,12 +150,12 @@ module.exports = function(app) {
     });
 
     app.get('/admin/tickers/:tickerId/delete', function(req, res) {
-        res.render('admin/delete');
+        res.render('admin/tickers/delete');
     });
 
     app.post('/admin/tickers/:tickerId/delete', function(req, res) {
         Ticker.remove({ _id : req.params.tickerId }, function(err) {
-            res.redirect('/tickers');
+            res.redirect('/admin/tickers');
         });
     });
 }
