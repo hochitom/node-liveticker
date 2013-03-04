@@ -13,17 +13,20 @@ block content
           mixin text("user")
           mixin errorMessage('user', 'user')
       .control-group
+        mixin label("email", "E-Mail")        
+        .controls
+          mixin text("email")
+          mixin errorMessage('email', 'email')
+      .control-group
         mixin label("password", "Passwort")        
         .controls
           mixin password("password")
           mixin errorMessage('password', 'password')
       .control-group
-        mixin label("remember", "remember me")        
+        mixin label("password2", "Passwort bestätigen")        
         .controls
-          mixin boolean("remember")
-          mixin errorMessage('remember', 'remember')
+          mixin password("password2")
+          mixin errorMessage('password2', 'password2')
 
     .form-actions
       input.btn.btn-primary(type="submit", value="Login")
-      p
-        a(href="/admin/register") registrieren

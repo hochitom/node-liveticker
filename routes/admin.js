@@ -29,6 +29,28 @@ module.exports = function(app) {
         res.render('admin/login/login');
     });
 
+    app.get('/admin/register', function(req,res) {
+        res.render('admin/login/register');
+    });
+
+    app.post('/admin/register', function(req, res) {
+        if (req.param('password') === req.param('password2')) {
+            var user = new User(req.body);
+            console.log(':(');
+            user.save(function(err) {
+                if (err) {
+                    console.log('not saved');
+                    res.redirect('/admin/register');
+                } else {
+                    res.redirect('/admin/ticker');
+                }
+            });
+        } else {
+            console.log('password wrong');
+            res.redirect('/admin/register');
+        }
+    });
+
     app.post('/admin/login', function(req, res) {
         User.findOne({user: req.param('user')}, function(e, o) {
             if (!o) {
