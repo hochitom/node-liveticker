@@ -1,5 +1,5 @@
-extends ../layout
-include ../mixins/form-helpers
+extends ../../layout
+include ../../mixins/form-helpers
 
 block content
   form#ticker-form.form-horizontal(action="/tickers/" + ticker._id + "/edit", method="POST")
