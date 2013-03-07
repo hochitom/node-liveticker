@@ -75,7 +75,7 @@ module.exports = function(app) {
             if (!o) {
                 res.redirect('/admin/login');
             } else {
-                if (req.param('password') === o.password) {
+                if (encryptPassword(req.param('password')) === o.password) {
 
                     req.session.user_id = o._id;
 
