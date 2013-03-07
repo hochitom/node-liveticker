@@ -18,8 +18,8 @@ block content
           td= display(ticker.description)
 
 
-  form#ticker-form.form-horizontal(action="/tickers/" + ticker._id + "/delete", method="POST")
+  form#ticker-form.form-horizontal(action="/admin/tickers/" + ticker._id + "/delete", method="POST")
     .form-actions
-      a.btn.btn-warning(href="/tickers") Back
+      a.btn.btn-warning(href="/admin/tickers") Back
       | 
       input.btn.btn-danger(type="submit", value="Delete")

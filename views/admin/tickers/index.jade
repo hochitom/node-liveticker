@@ -18,11 +18,11 @@ block content
         td= display(ticker.description)
 
         td
-          a(href="/admin/" + ticker._id + "/detail", title="Detail")
+          a(href="/admin/tickers/" + ticker._id + "/detail", title="Detail")
             i.icon-zoom-in
           | 
-          a(href="/admin/" + ticker._id + "/edit", title="Edit")
+          a(href="/admin/tickers/" + ticker._id + "/edit", title="Edit")
             i.icon-edit
           | 
-          a(href="/admin/" + ticker._id + "/delete", title="Delete")
+          a(href="/admin/tickers/" + ticker._id + "/delete", title="Delete")
             i.icon-remove

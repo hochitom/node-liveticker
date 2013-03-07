@@ -28,7 +28,7 @@ module.exports = function(app) {
     });
 
     app.get('/admin', function(req, res) {
-        if (req.cookies.user === undefined || req.cookies.pass === undefined) {
+        if (!req.session.user_id) {
             res.redirect('/admin/login');
         } else {
             res.redirect('/admin/tickers');
@@ -180,7 +180,7 @@ module.exports = function(app) {
         });
 
         Event.find({ticker: ticker._id}, function(err, events) {
-            res.render('admin/detail', { 
+            res.render('admin/tickers/detail', { 
                 event: new Event(),
                 events: events
             });
