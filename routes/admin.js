@@ -6,10 +6,8 @@ var express = require('express'),
 
 function checkAuth (req, res, next) {
     if (!req.session.user_id) {
-        console.log('u r logged out');
         res.redirect('/admin/login');
     } else {
-        console.log('congrats');
         next();
     }
 }
@@ -46,17 +44,14 @@ module.exports = function(app) {
     app.post('/admin/register', function(req, res) {
         if (req.param('password') === req.param('password2')) {
             var user = new User(req.body);
-            console.log(':(');
             user.save(function(err) {
                 if (err) {
-                    console.log('not saved');
                     res.redirect('/admin/register');
                 } else {
                     res.redirect('/admin/ticker');
                 }
             });
         } else {
-            console.log('password wrong');
             res.redirect('/admin/register');
         }
     });
@@ -69,7 +64,6 @@ module.exports = function(app) {
                 if (req.param('password') === o.password) {
 
                     req.session.user_id = o._id;
-                    console.log(req);
 
                     if (req.param('remember') == 'true'){
                         res.cookie('user', req.param('user'), { maxAge: 900000 });
@@ -128,7 +122,6 @@ module.exports = function(app) {
             if (err) {
                 console.log('error');
             } else {
-                console.log('success');
 
                 app.io.sockets.on('connection', function (socket) {
                     socket.broadcast.emit('newMessage', event);
@@ -170,10 +163,8 @@ module.exports = function(app) {
                 console.log(event);
 
                 event.save(function (err) {
-                    console.log('test');
                     if (err) console.log('new entry failed');
                     
-                    console.log('entry saved!');
                     socket.broadcast.emit('publish', message);
                 });
             });
