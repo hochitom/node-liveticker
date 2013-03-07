@@ -1,4 +1,5 @@
 var express = require('express'),
+    crypto = require('crypto'),
     Ticker = require('../models/ticker'),
     Event = require('../models/event'),
     User = require('../models/user'),
@@ -11,6 +12,16 @@ function checkAuth (req, res, next) {
         next();
     }
 }
+
+function encryptPassword (password) {
+    var md5sum = crypto.createHash('md5'),
+        salt = 'adAsöfbaNbalj§sdha!3971236',
+        s = salt+password;
+
+    md5sum.update(s);
+
+    return(md5sum.digest('hex'));
+};
 
 module.exports = function(app) {
 
@@ -43,6 +54,9 @@ module.exports = function(app) {
 
     app.post('/admin/register', function(req, res) {
         if (req.param('password') === req.param('password2')) {
+
+            req.body.password = encryptPassword(req.body.password);
+
             var user = new User(req.body);
             user.save(function(err) {
                 if (err) {
