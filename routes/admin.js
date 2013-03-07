@@ -4,6 +4,16 @@ var express = require('express'),
     User = require('../models/user'),
     mapper = require('../lib/model-mapper');
 
+function checkAuth (req, res, next) {
+    if (!req.session.user_id) {
+        console.log('u r logged out');
+        res.redirect('/admin/login');
+    } else {
+        console.log('congrats');
+        next();
+    }
+}
+
 module.exports = function(app) {
 
     app.param('tickerId', function(req, res, next, id) {
@@ -56,8 +66,9 @@ module.exports = function(app) {
             if (!o) {
                 res.redirect('/admin/login');
             } else {
-                if (req.param('password') === o.password) {    
-                    req.session.user = o;
+                if (req.param('password') === o.password) {
+
+                    req.session.user_id = o._id;
                     console.log(req);
 
                     if (req.param('remember') == 'true'){
@@ -71,13 +82,18 @@ module.exports = function(app) {
         });
     });
     
-    app.get('/admin/tickers', function(req, res) {
+    app.get('/admin/logout', function(req, res) {
+        delete req.session.user_id;
+        res.redirect('/admin/login');
+    });
+
+    app.get('/admin/tickers', checkAuth, function(req, res) {
         Ticker.find({}, function(err, tickers) {
             res.render('admin/tickers/index', { tickers : tickers });
         });
     });
 
-    app.get('/admin/tickers/create', function(req, res) {
+    app.get('/admin/tickers/create', checkAuth, function(req, res) {
         res.render('admin/tickers/create', { ticker : new Ticker() });
     });
 
@@ -95,7 +111,7 @@ module.exports = function(app) {
         });
     });
 
-    app.get('/admin/tickers/:tickerId/edit', function(req, res) {
+    app.get('/admin/tickers/:tickerId/edit', checkAuth, function(req, res) {
         res.render('admin/tickers/edit');
     });
 
@@ -138,7 +154,7 @@ module.exports = function(app) {
         });
     });
 
-    app.get('/admin/tickers/:tickerId/detail', function(req, res) {
+    app.get('/admin/tickers/:tickerId/detail', checkAuth, function(req, res) {
         var ticker = res.locals.ticker;
 
         app.io.sockets.on('connection', function (socket) {
@@ -171,7 +187,7 @@ module.exports = function(app) {
         });
     });
 
-    app.get('/admin/tickers/:tickerId/delete', function(req, res) {
+    app.get('/admin/tickers/:tickerId/delete', checkAuth, function(req, res) {
         res.render('admin/tickers/delete');
     });
 

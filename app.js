@@ -20,8 +20,15 @@ app.configure(function(){
     app.use(express.bodyParser());
     app.use(express.methodOverride());
 
-	app.use(express.cookieParser('your secret here'));
-    app.use(express.cookieSession());
+	app.use(express.cookieParser('test'));
+    app.use(express.session({
+        secret: 'test',
+        cookie: {
+            path: '/admin',
+            httpOnly: true,
+            maxAge: null
+        }
+    }));
 
     app.use(app.router);
 
