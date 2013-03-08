@@ -108,6 +108,9 @@ module.exports = function(app) {
     app.post('/admin/tickers/create', function(req, res) { 
         var ticker = new Ticker(req.body);
 
+        console.log(req.body);
+        console.log(ticker);
+
         ticker.save(function(err) {
             if (err) {
                 res.render('admin/tickers/create', {
@@ -123,29 +126,6 @@ module.exports = function(app) {
         res.render('admin/tickers/edit');
     });
 
-    app.post('/admin/tickers/:tickerId/detail', function(req, res) {
-        var ticker = res.locals.ticker;
-        var tickerId = ticker._id;
-        var event = new Event({
-            ticker: tickerId,
-            text: req.body.message,
-            type: req.body.type
-        });
-
-        event.save(function(err){
-            if (err) {
-                console.log('error');
-            } else {
-
-                app.io.sockets.on('connection', function (socket) {
-                    socket.broadcast.emit('newMessage', event);
-                });
-
-                res.redirect('/admin/tickers/' + tickerId + '/detail');
-            }
-        });
-    });
-
     app.post('/admin/tickers/:tickerId/edit', function(req, res) {
         var ticker = res.locals.ticker;
         mapper.map(req.body).to(ticker);
@@ -156,7 +136,7 @@ module.exports = function(app) {
                     ticker : ticker
                 });
             } else {
-                res.redirect('/tickers');
+                res.redirect('/admin/tickers');
             }
         });
     });
@@ -189,6 +169,29 @@ module.exports = function(app) {
                 event: new Event(),
                 events: events
             });
+        });
+    });
+
+    app.post('/admin/tickers/:tickerId/detail', function(req, res) {
+        var ticker = res.locals.ticker;
+        var tickerId = ticker._id;
+        var event = new Event({
+            ticker: tickerId,
+            text: req.body.message,
+            type: req.body.type
+        });
+
+        event.save(function(err){
+            if (err) {
+                console.log('error');
+            } else {
+
+                app.io.sockets.on('connection', function (socket) {
+                    socket.broadcast.emit('newMessage', event);
+                });
+
+                res.redirect('/admin/tickers/' + tickerId + '/detail');
+            }
         });
     });
 

@@ -2,7 +2,7 @@ extends ../layout
 include ../../mixins/form-helpers
 
 block content
-  form#ticker-form.form-horizontal(action="/tickers/" + ticker._id + "/edit", method="POST")
+  form#ticker-form.form-horizontal(action="/admin/tickers/" + ticker._id + "/edit", method="POST")
     fieldset
       legend Edit Ticker
 
@@ -33,45 +33,45 @@ block content
       .match-data
         h2.display-data Match
         .control-group
-          mixin label("team1", "Heimmannschaft")        
+          mixin label("match.team1", "Heimmannschaft")        
           .controls
-            mixin text("team1", ticker.team1)
-            mixin errorMessage('team1', 'team1')
+            mixin text("match.team1", ticker.match.team1)
+            mixin errorMessage('match.team1', 'match.team1')
         .control-group
-          mixin label("team2", "Gastmannschaft")        
+          mixin label("match.team2", "Gastmannschaft")        
           .controls
-            mixin text("team2", ticker.team2)
-            mixin errorMessage('team2', 'team2')
+            mixin text("match.team2", ticker.match.team2)
+            mixin errorMessage('match.team2', 'match.team2')
         .control-group
-          mixin label("place", "Ort")        
+          mixin label("match.place", "Ort")        
           .controls
-            mixin text("place", ticker.place)
-            mixin errorMessage('place', 'place')
+            mixin text("match.place", ticker.match.place)
+            mixin errorMessage('match.place', 'match.place')
         .control-group
-          mixin label("visitors", "Zuschauer")        
+          mixin label("match.Visitors", "Zuschauer")        
           .controls
-            mixin number("visitors", ticker.visitors)
-            mixin errorMessage('visitors', 'visitors')
+            mixin number("match.Visitors", ticker.match.visitors)
+            mixin errorMessage('match.Visitors', 'match.Visitors')
         .control-group
-          mixin label("official.first", "Schiedsrichter")        
+          mixin label("match.officials.official1", "Schiedsrichter")        
           .controls
-            mixin text("officials.first", ticker.officials.first)
-            mixin errorMessage('officials.first', 'officials.first')
+            mixin text("match.officials.first", ticker.match.officials.first)
+            mixin errorMessage('match.officials.first', 'match.officials.first')
         .control-group
-          mixin label("officials.second", "1. Assistent")        
+          mixin label("match.officials.second", "1. Assistent")        
           .controls
-            mixin text("officials.second", ticker.officials.second)
-            mixin errorMessage('officials.second', 'officials.second')
+            mixin text("match.officials.second", ticker.match.officials.second)
+            mixin errorMessage('match.officials.second', 'match.officials.second')
         .control-group
-          mixin label("officials.third", "2. Assistent")        
+          mixin label("match.officials.official3", "2. Assistent")        
           .controls
-            mixin text("officials.third", ticker.officials.third)
-            mixin errorMessage('officials.third', 'officials.third')
+            mixin text("match.officials.third", ticker.match.officials.third)
+            mixin errorMessage('match.officials.third', 'match.officials.third')
         .control-group
-          mixin label("officials.fourth", "3. Assistent")        
+          mixin label("match.officials.fourth", "3. Assistent")        
           .controls
-            mixin text("officials.fourth", ticker.officials.fourth)
-            mixin errorMessage('officials.fourth', 'officials.fourth')
+            mixin text("match.officials.fourth", ticker.match.officials.fourth)
+            mixin errorMessage('match.officials.fourth', 'match.officials.fourth')
 
     .form-actions
       a.btn.btn-warning(href="/tickers") Back
