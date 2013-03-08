@@ -17,7 +17,9 @@ var Ticker = new Schema({
             second: {type: String},
             third: {type: String},
             fourth: {type: String}
-        }
+        },
+        standing: {type: String },
+        halftimeStanding: {type: String }
     }
     
 });
