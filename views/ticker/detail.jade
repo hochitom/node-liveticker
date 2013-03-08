@@ -5,17 +5,47 @@ block content
             
   table.table.table-bordered
     tr
-      th Property
-      th Value
-        tr
-          td Name
-          td= display(ticker.name)
-        tr
-          td Date
-          td= display(ticker.date)
-        tr
-          td Description
-          td= display(ticker.description)
+      th Name
+      td= display(ticker.name)
+    tr
+      th Date
+      td= display(ticker.date)
+    tr
+      th Description
+      td= display(ticker.description)
+
+  if (ticker.type == 'Match')
+    table.table.table-bordered
+      tr
+        th Heimmannschaft
+        td= display(ticker.match.team1)
+      tr
+        th Gastmannschaft
+        td= display(ticker.match.team2)
+      tr
+        th Stadion
+        td= display(ticker.match.place)
+      tr
+        th Zuschauer
+        td= display(ticker.match.visitors)
+      tr
+        th Schiedsrichter
+        td= display(ticker.match.officials.first)
+      tr
+        th 1. Assistent
+        td= display(ticker.match.officials.second)
+      tr
+        th 2. Assistent
+        td= display(ticker.match.officials.third)
+      tr
+        th 3. Assistent
+        td= display(ticker.match.officials.fourth)
+      tr
+        th Spielstand
+        td= display(ticker.match.standing)
+      tr
+        th Halbzeit
+        td= display(ticker.match.halftimeStanding)
 
   table.table.table-bordered#stream
     tr
