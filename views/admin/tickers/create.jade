@@ -3,7 +3,7 @@ include ../../mixins/form-helpers
 
 block content
 
-  form#ticker-form.form-horizontal(action="/tickers/create", method="POST")
+  form#ticker-form.form-horizontal(action="/admin/tickers/create", method="POST")
     fieldset
       legend Create a new Live-Ticker
     
@@ -75,6 +75,6 @@ block content
             mixin errorMessage('official4', 'official4')
 
     .form-actions
-      a.btn.btn-warning(href="/tickers") Back
+      a.btn.btn-warning(href="/admin/tickers") Back
       | 
       input.btn.btn-primary(type="submit", value="Create")

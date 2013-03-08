@@ -62,7 +62,7 @@ module.exports = function(app) {
                 if (err) {
                     res.redirect('/admin/register');
                 } else {
-                    res.redirect('/admin/ticker');
+                    res.redirect('/admin/login');
                 }
             });
         } else {
@@ -197,8 +197,10 @@ module.exports = function(app) {
     });
 
     app.post('/admin/tickers/:tickerId/delete', function(req, res) {
-        Ticker.remove({ _id : req.params.tickerId }, function(err) {
-            res.redirect('/admin/tickers');
+        Event.remove({ticker: req.params.tickerId}, function(err) {
+            Ticker.remove({ _id : req.params.tickerId }, function(err) {
+                res.redirect('/admin/tickers');
+            });
         });
     });
 }
