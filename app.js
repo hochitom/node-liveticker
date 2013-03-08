@@ -26,7 +26,7 @@ app.configure(function(){
         cookie: {
             path: '/admin',
             httpOnly: true,
-            maxAge: null
+            maxAge: 3600 * 60 * 60
         }
     }));
 
