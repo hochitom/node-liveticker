@@ -11,7 +11,6 @@ html
     block scripts
       script(src='/vendor/jquery/js/jquery.min.js')
       script(src='/vendor/bootstrap/js/bootstrap.min.js')
-      script(src="http://localhost:3001/socket.io/socket.io.js")
       script(src="/vendor/main.js")
 
   body
@@ -22,6 +21,8 @@ html
           ul.nav
             li
               a(href="/admin/tickers") Admin
+            li
+              a(href="/admin/logout") Logout
 
     .container
       block content
