@@ -1,58 +1,24 @@
 extends ../layout
 
 block content
-  h2.display-data= display(ticker.name)
-            
-  table.table.table-bordered
-    tr
-      th Name
-      td= display(ticker.name)
-    tr
-      th Date
-      td= display(ticker.date)
-    tr
-      th Description
-      td= display(ticker.description)
-
-  if (ticker.type == 'Match')
-    table.table.table-bordered
-      tr
-        th Heimmannschaft
-        td= display(ticker.match.team1)
-      tr
-        th Gastmannschaft
-        td= display(ticker.match.team2)
-      tr
-        th Stadion
-        td= display(ticker.match.place)
-      tr
-        th Zuschauer
-        td= display(ticker.match.visitors)
-      tr
-        th Schiedsrichter
-        td= display(ticker.match.officials.first)
-      tr
-        th 1. Assistent
-        td= display(ticker.match.officials.second)
-      tr
-        th 2. Assistent
-        td= display(ticker.match.officials.third)
-      tr
-        th 3. Assistent
-        td= display(ticker.match.officials.fourth)
-      tr
-        th Spielstand
-        td= display(ticker.match.standing)
-      tr
-        th Halbzeit
-        td= display(ticker.match.halftimeStanding)
-
-  table.table.table-bordered#stream
-    tr
-      th Date
-      th Text
-
-    each event in events
-        tr
-          td= display(event.date)
-          td= display(event.text)
+  .row-fluid
+    .span4
+      h2.display-data= display(ticker.name)
+      if (ticker.type == 'Match')
+        .well
+          p= display(ticker.match.team1)
+          p= display(ticker.match.team2)
+          p= display(ticker.match.place)
+          p= display(ticker.match.visitors)
+          p= display(ticker.match.standing)
+          p= display(ticker.match.halftimeStanding)
+          p= display(ticker.match.officials.first)
+          p= display(ticker.match.officials.second)
+          p= display(ticker.match.officials.third)
+          p= display(ticker.match.officials.fourth)
+    .span8
+      ul.media-list
+        each event in events
+          li.media
+            p= display(event.date)
+            p= display(event.text)
