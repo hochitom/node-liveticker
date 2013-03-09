@@ -162,7 +162,10 @@ module.exports = function(app) {
         var event = new Event({
             ticker: tickerId,
             text: req.body.message,
-            type: req.body.type
+            type: req.body.type,
+            headline: req.body.headline,
+            team: req.body.team,
+            minute: req.body.minute
         });
 
         event.save(function(err){

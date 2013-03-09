@@ -2,60 +2,94 @@ extends ../layout
 include ../../mixins/form-helpers
 
 block content
-  h2.display-data Ticker Detail
-            
-  table.table.table-bordered
-    tr
-      th Property
-      th Value
+
+  .row
+    //
+      .span6
+
+        h2.display-data Ticker Detail
+                  
+        table.table.table-bordered
+          tr
+            th Property
+            th Value
+              tr
+                td Name
+                td= display(ticker.name)
+              tr
+                td Date
+                td= display(ticker.date)
+              tr
+                td Description
+                td= display(ticker.description)
+
+        .form-actions
+          a.btn.btn-warning(href="/tickers") Back
+          | 
+          a.btn.btn-primary(href="/tickers/" + ticker._id + "/edit") Edit
+          | 
+          a.btn.btn-danger(href="/tickers/" + ticker._id + "/delete") Delete
+
+    .span6
+        form#ticker-form.form-vertical(method="POST")
+          fieldset
+            legend Create a new Message
+          
+            if (ticker.type === 'Match')
+              .control-group
+                mixin label("minute", "Spielminute")        
+                .controls
+                  mixin text("minute", event.minute)
+                  mixin errorMessage('minute', 'minute')
+              .row
+                .span3
+                  .control-group
+                    mixin label("type", "Type")        
+                    .controls
+                      select(name="type", id="type")
+                        option(value="null") 
+                        option(value="goal") Tor
+                        option(value="change") Spielerwechsel
+                        option(value="redCard") rote Karte
+                        option(value="yellowCard") gelbe Karte
+                        option(value="injury") Verletzung
+                      mixin errorMessage('type', 'type')
+                .span3
+                  .control-group
+                    mixin label("team", "Team")        
+                    .controls
+                      select(name="team", id="team")
+                        option(value="null")
+                        option(value="team1")= display(ticker.match.team1)
+                        option(value="team2")= display(ticker.match.team2)
+                      mixin errorMessage('team', 'team')
+
+            .control-group
+              mixin label("headline", "Überschrift")        
+              .controls
+                mixin text("headline", event.headline)
+                mixin errorMessage('headline', 'headline')
+
+            .control-group
+              mixin label("message", "Message")        
+              .controls
+                mixin textarea("message", event.message)
+                mixin errorMessage('event', 'message')
+
+          .form-actions
+            input.btn.btn-primary(type="submit", value="Save")
+    .span6
+      h2.display-data Ticker Messages
+
+      table.table.table-bordered
         tr
-          td Name
-          td= display(ticker.name)
-        tr
-          td Date
-          td= display(ticker.date)
-        tr
-          td Description
-          td= display(ticker.description)
+          th Date
+          th Text
+
+        each event in events
+            tr
+              td= display(event.date)
+              td= display(event.text)
 
   script(src="http://localhost:3001/socket.io/socket.io.js")
   script(src="/vendor/main.js")
-  .form-actions
-    a.btn.btn-warning(href="/tickers") Back
-    | 
-    a.btn.btn-primary(href="/tickers/" + ticker._id + "/edit") Edit
-    | 
-    a.btn.btn-danger(href="/tickers/" + ticker._id + "/delete") Delete
-
-  form#ticker-form.form-horizontal(method="POST")
-    fieldset
-      legend Create a new Message
-    
-      .control-group
-        mixin label("type", "Type")        
-        .controls
-          select(name="type", id="type")
-            option(value="goal") Tor
-            option(value="change") Spielerwechsel
-          mixin errorMessage('type', 'type')      
-
-      .control-group
-        mixin label("message", "Message")        
-        .controls
-          mixin textarea("message", event.message)
-          mixin errorMessage('event', 'message')
-
-    .form-actions
-      input.btn.btn-primary(type="submit", value="Save")
-
-  h2.display-data Ticker Messages
-
-  table.table.table-bordered
-    tr
-      th Date
-      th Text
-
-    each event in events
-        tr
-          td= display(event.date)
-          td= display(event.text)
