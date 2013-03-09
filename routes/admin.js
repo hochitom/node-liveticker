@@ -144,25 +144,9 @@ module.exports = function(app) {
     app.get('/admin/tickers/:tickerId/detail', checkAuth, function(req, res) {
         var ticker = res.locals.ticker;
 
-        app.io.sockets.on('connection', function (socket) {
+        /*app.io.sockets.on('connection', function (socket) {
             console.log("Connection " + socket.id + " accepted.");
-
-            socket.on('message', function(message){
-                console.log("Received message: " + message + " - from client " + socket.id);
-
-                var event = new Event({
-                    text: message
-                });
-
-                console.log(event);
-
-                event.save(function (err) {
-                    if (err) console.log('new entry failed');
-                    
-                    socket.broadcast.emit('publish', message);
-                });
-            });
-        });
+        });*/
 
         Event.find({ticker: ticker._id}, function(err, events) {
             res.render('admin/tickers/detail', { 
