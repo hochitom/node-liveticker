@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-  h2.display-data All Tickers
+  h2.display-data Upcoming Tickers
     a.btn.btn-primary.pull-right(href="/admin/tickers/create") Create a new Ticker
 
   table.table.table-bordered.table-striped(style="width:100%")
@@ -12,6 +12,31 @@ block content
         th.last
 
     each ticker in tickers
+      tr
+        td= display(ticker.name)
+        td= display(ticker.date)
+        td= display(ticker.description)
+
+        td
+          a(href="/admin/tickers/" + ticker._id + "/detail", title="Detail")
+            i.icon-zoom-in
+          | 
+          a(href="/admin/tickers/" + ticker._id + "/edit", title="Edit")
+            i.icon-edit
+          | 
+          a(href="/admin/tickers/" + ticker._id + "/delete", title="Delete")
+            i.icon-remove
+
+  h2.display-data Finished Tickers
+
+  table.table.table-bordered.table-striped(style="width:100%")
+    tr
+        th Name
+        th Date
+        th Description
+        th.last
+
+    each ticker in finishedtickers
       tr
         td= display(ticker.name)
         td= display(ticker.date)

@@ -96,9 +96,22 @@ module.exports = function(app) {
     });
 
     app.get('/admin/tickers', checkAuth, function(req, res) {
-        Ticker.find({}, function(err, tickers) {
-            res.render('admin/tickers/index', { tickers : tickers });
-        });
+        var now = new Date();
+        Ticker.find({})
+            .where('date')
+            .gt(now)
+            .exec(function(err, tickers) {
+                Ticker
+                    .find({})
+                    .where('date')
+                    .lt(now)
+                    .exec(function(err, finishedtickers) {
+                        res.render('admin/tickers/index', {
+                            finishedtickers : finishedtickers,
+                            tickers : tickers
+                        });
+                    });
+            });
     });
 
     app.get('/admin/tickers/create', checkAuth, function(req, res) {
@@ -107,9 +120,6 @@ module.exports = function(app) {
 
     app.post('/admin/tickers/create', function(req, res) { 
         var ticker = new Ticker(req.body);
-
-        console.log(req.body);
-        console.log(ticker);
 
         ticker.save(function(err) {
             if (err) {
@@ -148,12 +158,15 @@ module.exports = function(app) {
             console.log("Connection " + socket.id + " accepted.");
         });*/
 
-        Event.find({ticker: ticker._id}, function(err, events) {
-            res.render('admin/tickers/detail', { 
-                event: new Event(),
-                events: events
+        Event
+            .find({ticker: ticker._id})
+            .sort('-date')
+            .exec(function(err, events) {
+                res.render('admin/tickers/detail', { 
+                    event: new Event(),
+                    events: events
+                });
             });
-        });
     });
 
     app.post('/admin/tickers/:tickerId/detail', function(req, res) {

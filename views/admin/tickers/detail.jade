@@ -77,19 +77,18 @@ block content
                 mixin errorMessage('event', 'message')
 
           .form-actions
-            input.btn.btn-primary(type="submit", value="Save")
+            input.btn.btn-primary(type="submit", value="Post Entry")
     .span6
       h2.display-data Ticker Messages
 
       table.table.table-bordered
-        tr
-          th Date
-          th Text
-
         each event in events
             tr
-              td= display(event.date)
-              td= display(event.text)
+              td
+                if event.headline
+                  strong= display(event.headline)
+                br
+                span= display(event.text)
 
   script(src="http://localhost:3001/socket.io/socket.io.js")
   script(src="/vendor/main.js")
