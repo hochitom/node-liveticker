@@ -31,53 +31,59 @@ block content
           a.btn.btn-danger(href="/tickers/" + ticker._id + "/delete") Delete
 
     .span6
-        form#ticker-form.form-vertical(method="POST")
-          fieldset
-            legend Create a new Message
-          
-            if (ticker.type === 'Match')
-              .control-group
-                mixin label("minute", "Spielminute")        
-                .controls
-                  mixin text("minute", event.minute)
-                  mixin errorMessage('minute', 'minute')
-              .row
-                .span3
-                  .control-group
-                    mixin label("type", "Type")        
-                    .controls
-                      select(name="type", id="type")
-                        option(value="null") 
-                        option(value="goal") Tor
-                        option(value="change") Spielerwechsel
-                        option(value="redCard") rote Karte
-                        option(value="yellowCard") gelbe Karte
-                        option(value="injury") Verletzung
-                      mixin errorMessage('type', 'type')
-                .span3
-                  .control-group
-                    mixin label("team", "Team")        
-                    .controls
-                      select(name="team", id="team")
-                        option(value="null")
-                        option(value="team1")= display(ticker.match.team1)
-                        option(value="team2")= display(ticker.match.team2)
-                      mixin errorMessage('team', 'team')
-
+      form#ticker-form.form-vertical(method="POST")
+        fieldset
+          legend Create a new Message
+        
+          if (ticker.type === 'Match')
             .control-group
-              mixin label("headline", "Überschrift")        
+              mixin label("minute", "Spielminute")        
               .controls
-                mixin text("headline", event.headline)
-                mixin errorMessage('headline', 'headline')
+                mixin text("minute", event.minute)
+                mixin errorMessage('minute', 'minute')
+            .row
+              .span3
+                .control-group
+                  mixin label("type", "Type")        
+                  .controls
+                    select(name="type", id="type")
+                      option(value="null") 
+                      option(value="goal") Tor
+                      option(value="change") Spielerwechsel
+                      option(value="redCard") rote Karte
+                      option(value="yellowCard") gelbe Karte
+                      option(value="injury") Verletzung
+                    mixin errorMessage('type', 'type')
+              .span3
+                .control-group
+                  mixin label("team", "Team")        
+                  .controls
+                    select(name="team", id="team")
+                      option(value="null")
+                      option(value="team1")= display(ticker.match.team1)
+                      option(value="team2")= display(ticker.match.team2)
+                    mixin errorMessage('team', 'team')
 
-            .control-group
-              mixin label("message", "Message")        
-              .controls
-                mixin textarea("message", event.message)
-                mixin errorMessage('event', 'message')
+          .control-group
+            mixin label("headline", "Überschrift")        
+            .controls
+              mixin text("headline", event.headline)
+              mixin errorMessage('headline', 'headline')
 
-          .form-actions
-            input.btn.btn-primary(type="submit", value="Post Entry")
+          .control-group
+            mixin label("message", "Message")        
+            .controls
+              mixin textarea("message", event.message)
+              mixin errorMessage('event', 'message')
+
+        .form-actions
+          input.btn.btn-primary(type="submit", value="Post Entry")
+      .form-actions
+        p Liveticker: 
+          if ticker.active === true
+            a.btn.btn-danger(href="/admin/tickers/" + ticker._id + "/stop") Stoppen
+          else
+            a.btn.btn-warning(href="/admin/tickers/" + ticker._id + "/start") Starten
     .span6
       h2.display-data Ticker Messages
 

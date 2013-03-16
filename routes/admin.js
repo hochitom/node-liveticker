@@ -151,6 +151,22 @@ module.exports = function(app) {
         });
     });
 
+    app.get('/admin/tickers/:tickerId/start', checkAuth, function(req, res) {
+        var ticker = res.locals.ticker;
+        mapper.map({active: true}).to(ticker);
+        ticker.save(function(err) {
+            res.redirect('/admin/tickers/' + ticker._id + '/detail');
+        });
+    });
+
+    app.get('/admin/tickers/:tickerId/stop', checkAuth, function(req, res) {
+        var ticker = res.locals.ticker;
+        mapper.map({active: false}).to(ticker);
+        ticker.save(function(err) {
+            res.redirect('/admin/tickers/' + ticker._id + '/detail');
+        });
+    });
+
     app.get('/admin/tickers/:tickerId/detail', checkAuth, function(req, res) {
         var ticker = res.locals.ticker;
 
