@@ -668,16 +668,73 @@ textarea {
   h2,
   h3 {
     page-break-after: avoid; } }
+#branding {
+  background: #000;
+  color: #fff; }
+  #branding h1 {
+    margin: 0; }
+
+.info {
+  margin: 10px;
+  padding: 5px; }
+  .info h1 {
+    margin: 0; }
+  .info span {
+    display: block; }
+
+.matchcard {
+  background: #fff;
+  padding: 5px;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1); }
+  .matchcard > div {
+    display: inline-block;
+    float: left;
+    width: 33%;
+    text-align: center; }
+  .matchcard .team img {
+    max-width: 90%;
+    height: auto; }
+  .matchcard > .standing {
+    margin-top: 30px; }
+    .matchcard > .standing span {
+      display: block;
+      line-height: 1; }
+    .matchcard > .standing .time {
+      font-size: .95em; }
+    .matchcard > .standing .standing {
+      font-size: 40px;
+      font-weight: bold; }
+
+.stream {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .stream li {
+    margin: 0;
+    padding: 5px;
+    border-top: 1px solid #b6b6b6; }
+    .stream li:first-child {
+      border-top: 0; }
+  .stream p, .stream span, .stream h3 {
+    margin: 0;
+    display: block;
+    padding-left: 25px;
+    color: #2f2b2b; }
+  .stream .minute,
+  .stream .team,
+  .stream .headline {
+    font-size: 1em;
+    font-weight: bold; }
+  .stream .text {
+    font-size: 1.1em;
+    color: #5b5959; }
+
 main {
   background: #fff;
-  padding: 5px; }
-  main .stream {
-    list-style-type: none;
-    margin: 0;
-    padding: 0; }
-    main .stream li {
-      margin: 0;
-      padding: 0;
-      border-top: 1px solid black; }
-      main .stream li:first-child {
-        border-top: 0; }
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1); }

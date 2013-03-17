@@ -2,19 +2,33 @@ extends ../layout
 
 block content
   aside
-    h2.display-data= display(ticker.name)
+    .info
+      h1.display-data= display(ticker.name)
+      if (ticker.type == 'Match')
+        span Stadion:  #{ticker.match.place}
+        span Zuschauer: #{ticker.match.visitors}
+        span Schiedsrichter-Team:
+        ol
+          li= display(ticker.match.officials.first)
+          li= display(ticker.match.officials.second)
+          li= display(ticker.match.officials.third)
+          li= display(ticker.match.officials.fourth)
+    
     if (ticker.type == 'Match')
-      .well
-        p= display(ticker.match.team1)
-        p= display(ticker.match.team2)
-        p= display(ticker.match.place)
-        p= display(ticker.match.visitors)
-        p= display(ticker.match.standing)
-        p= display(ticker.match.halftimeStanding)
-        p= display(ticker.match.officials.first)
-        p= display(ticker.match.officials.second)
-        p= display(ticker.match.officials.third)
-        p= display(ticker.match.officials.fourth)
+      .matchcard
+        .team.home
+          span.name= display(ticker.match.team1)
+          img(src="/img/_tmp/team1-dummy-logo.png")
+
+        .standing
+          span.time 35. Minute
+          span.standing 0:2
+          span.halftime -:-
+
+        .team.guest
+          span.name= display(ticker.match.team2)
+          img(src="/img/_tmp/team2-dummy-logo.png")
+
   main
     ul.stream
       each event in events
