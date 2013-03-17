@@ -465,7 +465,8 @@ textarea {
 
 body {
   font-size: 1em;
-  line-height: 1.4; }
+  line-height: 1.4;
+  background: #e7e6e6; }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -667,3 +668,12 @@ textarea {
   h2,
   h3 {
     page-break-after: avoid; } }
+main {
+  background: #fff; }
+  main .stream {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    main .stream li {
+      margin: 0;
+      padding: 0; }

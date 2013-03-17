@@ -16,8 +16,10 @@ block content
         p= display(ticker.match.officials.third)
         p= display(ticker.match.officials.fourth)
   main
-    ul.media-list#stream
+    ul.stream
       each event in events
-        li.media
-          p= display(event.date)
-          p= display(event.text)
+        li
+          span.minute= display(event.date)
+          span.team= display(event.team)
+          h3.headline= display(event.headline)
+          p.text= display(event.text)

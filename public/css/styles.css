@@ -669,4 +669,15 @@ textarea {
   h3 {
     page-break-after: avoid; } }
 main {
-  background: #fff; }
+  background: #fff;
+  padding: 5px; }
+  main .stream {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    main .stream li {
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid black; }
+      main .stream li:first-child {
+        border-top: 0; }
