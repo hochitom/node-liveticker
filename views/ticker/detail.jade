@@ -1,24 +1,23 @@
 extends ../layout
 
 block content
-  .row-fluid
-    .span4
-      h2.display-data= display(ticker.name)
-      if (ticker.type == 'Match')
-        .well
-          p= display(ticker.match.team1)
-          p= display(ticker.match.team2)
-          p= display(ticker.match.place)
-          p= display(ticker.match.visitors)
-          p= display(ticker.match.standing)
-          p= display(ticker.match.halftimeStanding)
-          p= display(ticker.match.officials.first)
-          p= display(ticker.match.officials.second)
-          p= display(ticker.match.officials.third)
-          p= display(ticker.match.officials.fourth)
-    .span8
-      ul.media-list#stream
-        each event in events
-          li.media
-            p= display(event.date)
-            p= display(event.text)
+  aside
+    h2.display-data= display(ticker.name)
+    if (ticker.type == 'Match')
+      .well
+        p= display(ticker.match.team1)
+        p= display(ticker.match.team2)
+        p= display(ticker.match.place)
+        p= display(ticker.match.visitors)
+        p= display(ticker.match.standing)
+        p= display(ticker.match.halftimeStanding)
+        p= display(ticker.match.officials.first)
+        p= display(ticker.match.officials.second)
+        p= display(ticker.match.officials.third)
+        p= display(ticker.match.officials.fourth)
+  main
+    ul.media-list#stream
+      each event in events
+        li.media
+          p= display(event.date)
+          p= display(event.text)
