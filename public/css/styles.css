@@ -689,16 +689,23 @@ textarea {
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1); }
+  .fixedMatchcard .matchcard {
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.95); }
   .matchcard > div {
     display: inline-block;
     float: left;
     width: 33%;
     text-align: center; }
   .matchcard .team img {
-    max-width: 90%;
-    height: auto; }
+    max-height: 70px;
+    width: auto; }
   .matchcard > .standing {
-    margin-top: 30px; }
+    margin-top: 15px; }
     .matchcard > .standing span {
       display: block;
       line-height: 1; }

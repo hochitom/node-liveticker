@@ -7,13 +7,17 @@ html
 
     link(rel='stylesheet', href='/css/styles.css')
 
-    block scripts
-      script(src='/vendor/jquery/js/jquery.min.js')
-      script(src="http://localhost:3001/socket.io/socket.io.js")
-      script(src="/vendor/main.js")
+    block hscripts
+      script(src="/js/vendor/modernizr-2.6.2.min.js")
 
   body
     #branding
       h1 Sturm12.at Liveticker
     .container
       block content
+
+    block bscripts
+      script(src='/js/vendor/jquery-1.9.0.min.js')
+      script(src="http://localhost:3001/socket.io/socket.io.js")
+      script(src="/js/plugins.js")
+      script(src="/js/main.js")
