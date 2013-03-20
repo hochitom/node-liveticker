@@ -1,5 +1,5 @@
 var websocket = function() {
-    var socket = io.connect('http://localhost:3001');
+    var socket = io.connect('http://192.168.0.10:3001');
     socket.on('connect', function(){ console.log("Connected to Server"); });
     socket.on('newMessage', function(data){ 
         console.log(data);
@@ -20,8 +20,11 @@ $(document).ready(function(){
         console.log(direction);
         if (direction === 'down') {
             padding = cHeight;
-        }
+            $('body').css({'padding-top': cHeight}).addClass('fixedMatchcard');
+        } /*else {
+            $('body').css({'padding-top': 0}).removeClass('fixedMatchcard');
+        }*/
 
-        $('body').toggleClass('fixedMatchcard').css({'padding-top': padding});
+        
     }, { offset: 0 });
 });

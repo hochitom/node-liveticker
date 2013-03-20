@@ -319,15 +319,6 @@
       "outputAbbreviatedPath" : "\/node_modules\/jade\/node_modules\/mkdirp\/test\/umask-ck.js",
       "fileType" : 64
     },
-    "\/node_modules\/jade\/testing\/index.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/jade\/testing\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/sass\/bourbon\/bourbon\/css3\/_background-size.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -351,6 +342,17 @@
       "outputAbbreviatedPath" : "\/node_modules\/socket.io\/benchmarks\/runner-ck.js",
       "fileType" : 64
     },
+    "\/node_modules\/mocha\/lib\/interfaces\/qunit.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/node_modules\/mocha\/lib\/interfaces\/qunit.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/node_modules\/mocha\/lib\/interfaces\/qunit-ck.js",
+      "fileType" : 64
+    },
     "\/node_modules\/express\/node_modules\/connect\/lib-cov\/public\/icons\/page_white_flash.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -362,16 +364,14 @@
       "initialSize" : 582,
       "fileType" : 8192
     },
-    "\/node_modules\/mocha\/lib\/interfaces\/qunit.js" : {
+    "\/node_modules\/jade\/testing\/index.html" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/mocha\/lib\/interfaces\/qunit.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/node_modules\/mocha\/lib\/interfaces\/qunit-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/node_modules\/jade\/testing\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/node_modules\/mongoose\/index.js" : {
       "ignoreWasSetByUser" : 0,
@@ -2076,17 +2076,6 @@
       "outputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/redis\/benches\/sub_quit_test-ck.js",
       "fileType" : 64
     },
-    "\/node_modules\/mocha\/lib\/ms.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/mocha\/lib\/ms.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/node_modules\/mocha\/lib\/ms-ck.js",
-      "fileType" : 64
-    },
     "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_white_excel.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2097,6 +2086,17 @@
       "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_white_excel.png",
       "initialSize" : 663,
       "fileType" : 8192
+    },
+    "\/node_modules\/mocha\/lib\/ms.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/node_modules\/mocha\/lib\/ms.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/node_modules\/mocha\/lib\/ms-ck.js",
+      "fileType" : 64
     },
     "\/node_modules\/jade\/lib\/self-closing.js" : {
       "ignoreWasSetByUser" : 0,
@@ -4125,15 +4125,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/node_modules\/jade\/node_modules\/coffee-script\/lib\/coffee-script\/lexer.js" : {
+    "\/node_modules\/express\/node_modules\/mkdirp\/test\/mkdirp.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/jade\/node_modules\/coffee-script\/lib\/coffee-script\/lexer.js",
+      "inputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/mkdirp\/test\/mkdirp.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/node_modules\/jade\/node_modules\/coffee-script\/lib\/coffee-script\/lexer-ck.js",
+      "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/mkdirp\/test\/mkdirp-ck.js",
       "fileType" : 64
     },
     "\/node_modules\/mongoose\/node_modules\/mongodb\/lib\/mongodb\/connection\/connection_utils.js" : {
@@ -4147,15 +4147,15 @@
       "outputAbbreviatedPath" : "\/node_modules\/mongoose\/node_modules\/mongodb\/lib\/mongodb\/connection\/connection_utils-ck.js",
       "fileType" : 64
     },
-    "\/node_modules\/express\/node_modules\/mkdirp\/test\/mkdirp.js" : {
+    "\/node_modules\/jade\/node_modules\/coffee-script\/lib\/coffee-script\/lexer.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/mkdirp\/test\/mkdirp.js",
+      "inputAbbreviatedPath" : "\/node_modules\/jade\/node_modules\/coffee-script\/lib\/coffee-script\/lexer.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/mkdirp\/test\/mkdirp-ck.js",
+      "outputAbbreviatedPath" : "\/node_modules\/jade\/node_modules\/coffee-script\/lib\/coffee-script\/lexer-ck.js",
       "fileType" : 64
     },
     "\/node_modules\/mongoose\/node_modules\/mongodb\/lib\/mongodb\/connection\/url_parser.js" : {
@@ -4391,17 +4391,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/node_modules\/socket.io\/node_modules\/socket.io-client\/test\/node\/builder.test.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/socket.io-client\/test\/node\/builder.test.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/socket.io-client\/test\/node\/builder.test-ck.js",
-      "fileType" : 64
-    },
     "\/node_modules\/socket.io\/node_modules\/socket.io-client\/node_modules\/ws\/test\/Sender.hixie.test.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -4411,6 +4400,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/socket.io-client\/node_modules\/ws\/test\/Sender.hixie.test-ck.js",
+      "fileType" : 64
+    },
+    "\/node_modules\/socket.io\/node_modules\/socket.io-client\/test\/node\/builder.test.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/socket.io-client\/test\/node\/builder.test.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/socket.io-client\/test\/node\/builder.test-ck.js",
       "fileType" : 64
     },
     "\/sass\/bourbon\/css3\/_background-image.scss" : {
@@ -5132,17 +5132,6 @@
       "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib-cov\/middleware\/directory-ck.js",
       "fileType" : 64
     },
-    "\/node_modules\/jade\/jade.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/jade\/jade.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/node_modules\/jade\/jade.min-ck.js",
-      "fileType" : 64
-    },
     "\/sass\/bourbon\/bourbon\/_bourbon-deprecated-upcoming.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -5154,6 +5143,17 @@
       "outputAbbreviatedPath" : "\/sass\/bourbon\/css\/_bourbon-deprecated-upcoming.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/node_modules\/jade\/jade.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/node_modules\/jade\/jade.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/node_modules\/jade\/jade.min-ck.js",
+      "fileType" : 64
     },
     "\/node_modules\/socket.io\/node_modules\/socket.io-client\/node_modules\/ws\/test\/hybi-common.js" : {
       "ignoreWasSetByUser" : 0,
@@ -5175,6 +5175,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/node_modules\/mongoose\/lib\/error-ck.js",
+      "fileType" : 64
+    },
+    "\/config\/defaults-ck.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/config\/defaults-ck.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/config\/defaults-ck-ck.js",
       "fileType" : 64
     },
     "\/node_modules\/mongoose\/examples\/schema.js" : {
@@ -5232,16 +5243,16 @@
       "initialSize" : 794,
       "fileType" : 8192
     },
-    "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_error.png" : {
+    "\/node_modules\/mocha\/node_modules\/commander\/lib\/commander.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_error.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_error.png",
-      "initialSize" : 793,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/node_modules\/mocha\/node_modules\/commander\/lib\/commander.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/node_modules\/mocha\/node_modules\/commander\/lib\/commander-ck.js",
+      "fileType" : 64
     },
     "\/sass\/bourbon\/css3\/_keyframes.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -5266,16 +5277,16 @@
       "outputAbbreviatedPath" : "\/node_modules\/jade\/testing\/index.html",
       "fileType" : 512
     },
-    "\/node_modules\/mocha\/node_modules\/commander\/lib\/commander.js" : {
+    "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_error.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/mocha\/node_modules\/commander\/lib\/commander.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/node_modules\/mocha\/node_modules\/commander\/lib\/commander-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_error.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_error.png",
+      "initialSize" : 793,
+      "fileType" : 8192
     },
     "\/node_modules\/express\/node_modules\/connect\/lib-cov\/public\/icons\/page_white_word.png" : {
       "ignoreWasSetByUser" : 0,
@@ -6421,16 +6432,16 @@
       "initialSize" : 618,
       "fileType" : 8192
     },
-    "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_white_word.png" : {
+    "\/node_modules\/mongoose\/node_modules\/mongodb\/lib\/mongodb\/commands\/update_command.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_white_word.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_white_word.png",
-      "initialSize" : 651,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/node_modules\/mongoose\/node_modules\/mongodb\/lib\/mongodb\/commands\/update_command.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/node_modules\/mongoose\/node_modules\/mongodb\/lib\/mongodb\/commands\/update_command-ck.js",
+      "fileType" : 64
     },
     "\/sass\/sturm12\/_main.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -6455,16 +6466,16 @@
       "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/middleware\/session\/store-ck.js",
       "fileType" : 64
     },
-    "\/node_modules\/mongoose\/node_modules\/mongodb\/lib\/mongodb\/commands\/update_command.js" : {
+    "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_white_word.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/mongoose\/node_modules\/mongodb\/lib\/mongodb\/commands\/update_command.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/node_modules\/mongoose\/node_modules\/mongodb\/lib\/mongodb\/commands\/update_command-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_white_word.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_white_word.png",
+      "initialSize" : 651,
+      "fileType" : 8192
     },
     "\/node_modules\/socket.io\/node_modules\/socket.io-client\/lib\/transports\/flashsocket.js" : {
       "ignoreWasSetByUser" : 0,
@@ -7758,17 +7769,6 @@
       "outputAbbreviatedPath" : "\/node_modules\/mocha\/node_modules\/jade\/lib\/nodes\/code-ck.js",
       "fileType" : 64
     },
-    "\/node_modules\/express\/node_modules\/connect\/lib\/connect.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/connect.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/connect-ck.js",
-      "fileType" : 64
-    },
     "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_green.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -7780,15 +7780,6 @@
       "initialSize" : 621,
       "fileType" : 8192
     },
-    "\/node_modules\/mocha\/node_modules\/ms\/test\/index.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/mocha\/node_modules\/ms\/test\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/node_modules\/socket.io\/node_modules\/socket.io-client\/node_modules\/uglify-js\/test\/unit\/compress\/test\/issue27.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -7798,6 +7789,26 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/socket.io-client\/node_modules\/uglify-js\/test\/unit\/compress\/test\/issue27-ck.js",
+      "fileType" : 64
+    },
+    "\/node_modules\/mocha\/node_modules\/ms\/test\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/node_modules\/mocha\/node_modules\/ms\/test\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/node_modules\/express\/node_modules\/connect\/lib\/connect.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/connect.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/connect-ck.js",
       "fileType" : 64
     },
     "\/node_modules\/express\/node_modules\/connect\/lib-cov\/middleware\/session\/memory.js" : {
@@ -7956,15 +7967,15 @@
       "outputAbbreviatedPath" : "\/node_modules\/mongoose\/node_modules\/mongodb\/node_modules\/bson\/tools\/gleak-ck.js",
       "fileType" : 64
     },
-    "\/node_modules\/socket.io\/node_modules\/socket.io-client\/node_modules\/uglify-js\/test\/unit\/compress\/test\/issue25.js" : {
+    "\/node_modules\/socket.io\/node_modules\/redis\/examples\/file.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/socket.io-client\/node_modules\/uglify-js\/test\/unit\/compress\/test\/issue25.js",
+      "inputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/redis\/examples\/file.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/socket.io-client\/node_modules\/uglify-js\/test\/unit\/compress\/test\/issue25-ck.js",
+      "outputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/redis\/examples\/file-ck.js",
       "fileType" : 64
     },
     "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_white_medal.png" : {
@@ -7977,6 +7988,17 @@
       "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib\/public\/icons\/page_white_medal.png",
       "initialSize" : 706,
       "fileType" : 8192
+    },
+    "\/node_modules\/socket.io\/node_modules\/socket.io-client\/node_modules\/uglify-js\/test\/unit\/compress\/test\/issue25.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/socket.io-client\/node_modules\/uglify-js\/test\/unit\/compress\/test\/issue25.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/socket.io-client\/node_modules\/uglify-js\/test\/unit\/compress\/test\/issue25-ck.js",
+      "fileType" : 64
     },
     "\/node_modules\/socket.io\/node_modules\/socket.io-client\/node_modules\/active-x-obfuscator\/node_modules\/zeparser\/index.js" : {
       "ignoreWasSetByUser" : 0,
@@ -7998,17 +8020,6 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/node_modules\/socket.io\/lib\/transports\/http-polling-ck.js",
-      "fileType" : 64
-    },
-    "\/node_modules\/socket.io\/node_modules\/redis\/examples\/file.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/redis\/examples\/file.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/node_modules\/socket.io\/node_modules\/redis\/examples\/file-ck.js",
       "fileType" : 64
     },
     "\/node_modules\/express\/node_modules\/connect\/lib-cov\/public\/icons\/page_white_paint.png" : {
@@ -8609,17 +8620,6 @@
       "outputAbbreviatedPath" : "\/node_modules\/jade\/node_modules\/commander\/index-ck.js",
       "fileType" : 64
     },
-    "\/node_modules\/express\/node_modules\/connect\/lib-cov\/public\/icons\/page_white_world.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib-cov\/public\/icons\/page_white_world.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib-cov\/public\/icons\/page_white_world.png",
-      "initialSize" : 734,
-      "fileType" : 8192
-    },
     "\/node_modules\/mocha\/lib\/reporters\/min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -8630,6 +8630,17 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/node_modules\/mocha\/lib\/reporters\/min-ck.js",
       "fileType" : 64
+    },
+    "\/node_modules\/express\/node_modules\/connect\/lib-cov\/public\/icons\/page_white_world.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib-cov\/public\/icons\/page_white_world.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/node_modules\/express\/node_modules\/connect\/lib-cov\/public\/icons\/page_white_world.png",
+      "initialSize" : 734,
+      "fileType" : 8192
     },
     "\/node_modules\/mocha\/lib\/reporters\/json-cov.js" : {
       "ignoreWasSetByUser" : 0,
